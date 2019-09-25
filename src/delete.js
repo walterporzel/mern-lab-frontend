@@ -3,32 +3,44 @@ import React, { Component } from "react"
 class Delete extends Component {
     constructor(props) {
         super(props)
+            
+            this.state = {
+                name:"",
+            }
 
-        this.state = {
-            capital: this.props.capital
+            this.handleChange = this.handleChange.bind(this)
+            this.handleSubmit = this.handleSubmit.bind(this)
         }
+
+
+    
+        handleChange(event) {
+            this.setState({
+              [event.target.name]: event.target.value,
+            });
+          }
+
+          handleSubmit(event) {
+            event.preventDefault();
+            const url = "https://obscure-cove-57402.herokuapp.com/";
+            fetch(url + this.state.name, {
+                method: "DELETE"
+            })
+         }
+    
+    render() {
+        console.log(this.props, this.state)
+    
+        return(
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <input type="text" name="name" onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        )
+      }
     }
-}
-
-this.changeCapital = this.changeCapital.bind(this)
-
-}
-
-changeCapital() {
-    this.setState({
-        capital: "null"
-    })
-}
-
-render() {
-    console.log(this.props, this.state)
-
-    return(
-        <div>
-            <p>{ this.state.capital }</p>
-            <button onClick={ this.changeCapital }>Delete the Capital</button>
-        </div>
-    )
-  }
-
-export default Delete
+    
+    export default Delete

@@ -4,7 +4,7 @@ import Country from '../src/country';
 import { Route, Link, Switch } from "react-router-dom";
 
 import Create from '../src/create';
-// import Delete from '../srt/Delete';
+import Delete from '../src/delete';
 // import Edit from '../srt/edit';
 // import Update from '../srt/update';
 import axios from 'axios';
@@ -33,6 +33,7 @@ class App extends Component {
         <h1>Sup countries</h1>
         </Link>
         <Link to="/create">Create</Link>
+        <Link to="/delete">Delete</Link>
         <Route
         path="/"
         exact render = { routerProps => (
@@ -41,6 +42,9 @@ class App extends Component {
         <Route 
             path="/create" 
             exact component={ Create }/>
+        <Route
+          path="/delete"
+          exact component={ Delete }/>
         </div>
         
         
