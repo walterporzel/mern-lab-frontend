@@ -35,18 +35,31 @@ class Create extends Component {
 //     })
 // }
 
+
+
 handleSubmit(event) {
-    alert('Create a new country');
         event.preventDefault();
-        const newCountry = {
+        const url = "https://obscure-cove-57402.herokuapp.com/";
+        fetch(url, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+                "Connection": "keep-alive",
+                "Cache-Control": "no-cache",
+                "Accept": "*/*",
+                "Host": "https://obscure-cove-57402.herokuapp.com/"
+         },
+        body: JSON.stringify ({
             name: this.state.name,
             capital: this.state.capital,
             region: this.state.region,
-            population: this.state.population
-        }
-        axios.post('https://obscure-cove-57402.herokuapp.com/', { newCountry })
-
+            population: this.state.population,
         
+        })
+    })
+        
+
+         
 }
 
 render() {
