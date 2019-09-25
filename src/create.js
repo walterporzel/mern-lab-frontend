@@ -23,19 +23,6 @@ class Create extends Component {
             });
           }
 
-
-
-
-
-
-// changeTerrain()  {
-//     this.setState({
-//         terrain: "string"
-//     })
-// }
-
-
-
 handleSubmit(event) {
         event.preventDefault();
         const url = "https://obscure-cove-57402.herokuapp.com/";

@@ -6,7 +6,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import Create from '../src/create';
 import Delete from '../src/delete';
 // import Edit from '../srt/edit';
-// import Update from '../srt/update';
+import Update from '../src/update';
 import axios from 'axios';
 
 class App extends Component {
@@ -34,6 +34,7 @@ class App extends Component {
         </Link>
         <Link to="/create">Create</Link>
         <Link to="/delete">Delete</Link>
+        <Link to="/update">Update</Link>
         <Route
         path="/"
         exact render = { routerProps => (
@@ -45,6 +46,9 @@ class App extends Component {
         <Route
           path="/delete"
           exact component={ Delete }/>
+        <Route
+          path="/update"
+          exact component={ Update }/>
         </div>
         
         
