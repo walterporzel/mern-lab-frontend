@@ -5,7 +5,7 @@ import { Route, Link, Switch } from "react-router-dom";
 
 import Create from '../src/create';
 import Delete from '../src/delete';
-import Detail from '../src/detail';
+// import Detail from '../src/detail';
 import Update from '../src/update';
 import axios from 'axios';
 
@@ -50,13 +50,13 @@ class App extends Component {
         <Route
           path="/update"
           exact component={ Update }/>
-        <Route
+        {/* <Route
           path="/:name"
           exact render={(routerProps) => (
               <Detail
               {...routerProps}
-              />
-          )}/>
+              /> */}
+          {/* )}/> */}
         </div>
       )
       }

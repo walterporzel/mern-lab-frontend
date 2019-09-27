@@ -10,9 +10,9 @@ render() {
         <div>
         <ul>
         { this.props.country.map (country => 
-        <Link to={"/" + country.name}>
+        // <Link to={"/" + country.name}>
         <li>{country.name}</li>
-        </Link>
+        // </Link>
         )}
         </ul>
         </div>
